@@ -1,0 +1,86 @@
+name: arbo
+description: Arbo - Arborize sua região
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.2.6+6
+environment:
+  sdk: ">=2.14.3 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+  utils:
+    path: utils
+
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
+
+  flutter_modular: ^3.4.1+1
+  mobx: ^2.0.4
+  flutter_mobx: ^2.0.2
+
+  brasil_fields: ^1.1.2
+
+  permission_handler: ^8.1.4+2
+
+  flutter_local_notifications: ^5.0.0+1
+  flutter_icons: ^1.1.0
+  flutter_masked_text: ^0.8.0
+
+  #localização
+  location_permissions: ^4.0.0
+  #localização
+  google_place: ^0.4.0
+  google_maps_webservice: ^0.0.20-nullsafety.0
+  #google_maps_flutter: ^2.0.1
+  google_maps_flutter_web: ^0.2.1
+  #google_map_polyline: any
+  location: ^4.1.1
+  geocoder: ^0.2.1
+  #geolocator: ^6.1.14
+
+  #Firebase
+  firebase_messaging: ^10.0.7
+  google_sign_in: ^5.1.0
+  firebase_core: ^1.6.0
+  cloud_firestore: ^2.5.3
+  firebase_auth: ^3.1.1
+  firebase_storage: ^10.0.3
+  cloud_functions: ^3.0.3
+
+  package_info: ^0.4.0+16
+  image_picker: ^0.7.3
+  cached_network_image: ^3.0.0
+  clipboard: ^0.1.3
+  toast: ^0.1.5
+
+dependency_overrides:
+  intl: ^0.17.0-nullsafety.2
+  plugin_platform_interface: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mobx_codegen: ^2.0.1+3
+  flutter_modular_test: ^1.0.0
+  build_runner: ^2.0.3
+
+flutter:
+  generate: true
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/images/
+    - assets/jsons/
+    - assets/icons/
+
+scripts:
+  mobx: flutter pub run build_runner watch --delete-conflicting-outputs
+  connect: /home/pedro/Android/Sdk/platform-tools/adb connect 192.168.0.100:5555
+  copyfolder: cp -R /mnt/886aa845-2922-4c69-a70c-11141a85f484/BACKUP/developer/frela/ARBO/arbo/build/web /mnt/886aa845-2922-4c69-a70c-11141a85f484/NodejsProject/firecast-arbo
+  buildaab: flutter build appbundle --release
+  buildapk: flutter build apk --release
+  transaction: flutter pub run intl_translation:extract_to_arb --output-dir=lib lib/localizations.dart

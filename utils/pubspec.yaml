@@ -1,0 +1,52 @@
+name: utils
+description: A new Flutter package project.
+version: 0.0.1
+author:
+homepage:
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations: # add this
+    sdk: flutter # add this
+
+  #Firebase
+  cloud_firestore: ^2.5.3
+  cloud_functions: ^3.0.3
+
+  rxdart: ^0.26.0
+
+  #Locations
+  location_permissions: ^4.0.0
+  google_maps_webservice: ^0.0.20-nullsafety.0
+  geocoder: ^0.2.1
+  google_maps_flutter: ^2.0.1
+  location: ^4.1.1
+  google_place: ^0.4.0
+
+  cpf_cnpj_validator: ^1.0.5
+  package_info: ^0.4.0+16
+
+  flutter_native_image: ^0.0.5
+  ntp:
+  app_settings: 4.1.1
+  url_launcher: ^5.4.1
+  flash: 1.3.1
+  flutter_ringtone_player: ^3.0.0
+  vibration: 1.7.3
+
+dependency_overrides:
+  intl: ^0.17.0-nullsafety.2
+  plugin_platform_interface: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/jsons/
+
